@@ -1,0 +1,165 @@
+* {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	border:0;
+
+	background:transparent;
+
+	font-family:inherit;
+	text-decoration:none;
+	outline:none;
+}
+
+ol, ul, li {
+	display:block;
+
+	list-style:none;
+}
+
+table {
+	border-spacing:0;
+	border-collapse: collapse;
+}
+
+a img {
+	border: none;
+}
+
+button, a {
+	cursor: pointer;
+
+	color: inherit;
+}
+
+textarea {
+	resize: none;
+}
+
+button, input, textarea, select {
+	appearance: none !important;
+	-webkit-appearance: none !important;
+	
+	border-radius: 0;
+}
+
+#root {
+	position: relative;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: lightblue;
+}
+
+#grass {
+	position: absolute;
+	bottom: 0;
+
+	width: 100%;
+	height: 50px;
+
+	background-color: darkgreen;
+}
+
+@keyframes ballBounce {
+	0% {bottom: 40px; transform: scaleY(0.8);}
+	5% {bottom: 50px; transform: scaleY(1);}
+	50% {bottom: 250px; transform: scaleY(1);}
+	95% {bottom: 50px; transform: scaleY(1);}
+	100% {bottom: 40px; transform: scaleY(0.8);}
+}
+
+@keyframes ballRotate {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);}
+	100% {transform: rotate(360deg);}
+}
+
+
+#ball {
+	position: absolute;
+	left: 50%;
+	bottom: 50px;
+
+	width: 100px;
+	height: 100px;
+
+	border-radius: 50%;
+	background-image: radial-gradient(rgba(200,0,0,1) 0%, rgb(160, 0, 0) 50%, rgba(100,0,0,1) 100%);
+	background-color: darkred;
+
+	animation-name: ballBounce;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	animation-fill-mode: forwards;
+}
+
+#ball8 {
+	position: absolute;
+	left: 20%;
+	bottom: 50px;
+
+	width: 100px;
+	height: 100px;
+
+	border-radius: 50%;
+	background-image: radial-gradient(rgba(30,30,30,1) 0%, rgb(10, 10, 10) 80%, rgba(0,0,0,1) 100%);
+
+	animation-name:ballRotate;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count:infinite;
+	animation-fill-mode: forwards;
+}
+
+.spot {
+	position: absolute;
+	top: 50%;
+	left: 85%;
+
+	width: 40px;
+	height: 40px;
+
+	border-radius: 50%;
+	background-color: white;
+
+	transform: translate(-50%, -50%) scaleX(0.7);
+}
+
+.spot p{
+	position: absolute;
+	top: 50%;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+
+	transform: translate(65%, -50%);
+}
+
+@keyframes wallRide {
+	0% {left: 100%; width: 60px; transform: skewY(20deg);}
+	50% {left: 50%; width: 10px; transform: skewY(0deg);}
+	74% {left: 24%; width: 35px; height: 100px; transform: skewY(-10deg);}
+	75% {left: 25%; width: 100px; height: 10px; transform: skewY(0deg);}
+	100% {left: 0%; width: 100px; height: 10px;}
+}
+
+#wall {
+	position: absolute;
+	left: 100%;
+	bottom: 40px;
+
+	width: 60px;
+	height: 100px;
+
+	background-color: goldenrod;
+
+	animation-name:wallRide;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count:infinite;
+	animation-fill-mode: forwards;
+}
