@@ -48,6 +48,7 @@ button, input, textarea, select {
 
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 
 	background-color: lightblue;
 }
@@ -108,7 +109,7 @@ button, input, textarea, select {
 	background-image: radial-gradient(rgba(30,30,30,1) 0%, rgb(10, 10, 10) 80%, rgba(0,0,0,1) 100%);
 
 	animation-name:ballRotate;
-	animation-duration: 1s;
+	animation-duration: 0.8s;
 	animation-timing-function: linear;
 	animation-iteration-count:infinite;
 	animation-fill-mode: forwards;
@@ -163,3 +164,42 @@ button, input, textarea, select {
 	animation-iteration-count:infinite;
 	animation-fill-mode: forwards;
 }
+
+@keyframes sunRays {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.2);}
+	100% {transform: scale(1);}
+}
+
+#sunshine {
+	position: absolute;
+	left: 60%;
+	bottom: 55%;
+
+	width: 400px;
+	height: 400px;
+
+	border-radius: 50%;
+	background-image: radial-gradient(circle, yellow 10%, lightblue 60%);
+	
+	animation-name: sunRays;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	animation-fill-mode: forwards;
+}
+
+ #sun {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 100px;
+	height: 100px;
+
+	border-radius: 50%;
+	background-color: yellow;
+
+	transform: translate(-50%, -50%);
+
+ }
