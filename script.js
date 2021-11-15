@@ -1,7 +1,7 @@
 function loadEvent() {
     const rootElement = document.getElementById("root");
     
-    console.log("Loading done");
+    console.log("Loaded");
 }
 
 window.addEventListener("load", loadEvent);
